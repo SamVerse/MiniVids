@@ -7,11 +7,12 @@ import {
   ImageKitServerError,
   ImageKitUploadNetworkError,
   upload,
+  UploadResponse,
 } from "@imagekit/next";
 import { useState } from "react";
 
 interface FileUploadProps {
-  onSuccess: (response: any) => void;
+  onSuccess: (response: UploadResponse) => void;
   onProgress?: (progress: number) => void;
   onError?: (error: Error) => void;
   fileTypes?: "image" | "video"; // Optional prop to specify file types
@@ -111,7 +112,7 @@ const FileUpload = ({ onSuccess, onProgress, fileTypes, onError }: FileUploadPro
       } else if (error instanceof ImageKitAbortError) {
         setError("Upload aborted: " + error.message);
       } else if (error && typeof error === "object" && "message" in error) {
-        setError("An unexpected error occurred: " + (error as any).message);
+        setError("An unexpected error occurred: " + (error as { message: string }).message);
       } else {
         setError("An unknown error occurred.");
       }

@@ -3,7 +3,7 @@ import { connectToDatabase } from "@/lib/db";
 import Video, { IVideo } from "@/models/video";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { Types } from "mongoose";
+import { Types, FilterQuery } from "mongoose";
 
 export async function GET(req: NextRequest) {
   try {
@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     const limit = 3; // number of videos per batch
     const cursor = searchParams.get("cursor"); // last _id
 
-    const query: any = {};
+    const query: FilterQuery<IVideo> = {};
     if (cursor) {
       query._id = { $lt: new Types.ObjectId(cursor) }; // get videos older than cursor
     }

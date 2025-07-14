@@ -1,9 +1,8 @@
 type FetchOptions = {
   method?: "GET" | "POST" | "PUT" | "DELETE";
     headers?: Record<string, string>;
-    body?: any;
+    body?: unknown;
 };
-
 class ApiClient {
     private async fetch<T>(
         endPoint: string,
@@ -53,6 +52,8 @@ class ApiClient {
     //  public async deleteVideo(id: string) {
     //       return this.fetch(`videos/${id}`, { method: 'DELETE' });
     //  }
+
+    // Similar methods can be added for other API endpoints
 
 }
 
