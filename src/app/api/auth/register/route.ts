@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Connect to the database
-    const db = await connectToDatabase();
+    await connectToDatabase();
     
     // Check if user already exists 
     const existingUser = await User.findOne({ email });

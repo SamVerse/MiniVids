@@ -1,5 +1,4 @@
-import { Connection, Mongoose } from "mongoose";
-import NextAuth from "next-auth";
+import { Mongoose } from "mongoose";
 
 // This global declaration is used to maintain a single connection to the MongoDB database across the application.
 // So that we don't create multiple connections when the application is restarted or when hot reloading occurs in development mode.

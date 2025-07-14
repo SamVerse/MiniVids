@@ -163,6 +163,13 @@ return (
         <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-blue-500"></div>
       </div>
     )}
+
+    {/* Error Message */}
+    {error && (
+      <div className="mt-2 text-red-500 text-sm">
+        <p>{error}</p>
+      </div>
+    )}
   </>
 );
 

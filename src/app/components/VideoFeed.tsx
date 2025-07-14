@@ -9,9 +9,9 @@ export default function VideoFeed() {
   const [cursor, setCursor] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-  const [activeVideoId, setActiveVideoId] = useState<string | null>(null); // State to track the active video
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null); 
   const infiniteScrollObserverRef = useRef<HTMLDivElement | null>(null);
-  const videoRefs = useRef<Map<string, HTMLDivElement>>(new Map()); // Refs for each video container
+  const videoRefs = useRef<Map<string, HTMLDivElement>>(new Map()); 
 
   const fetchVideos = async () => {
     if (loading || !hasMore) return;

@@ -12,7 +12,7 @@ export const authOptions: NextAuthOptions = {
           email: { label: "Email", type: "text", placeholder: "Enter your email here" },
           password: { label: "Password", type: "password" }
         },
-        async authorize(credentials, req) {
+        async authorize(credentials) {
           if (!credentials?.email || !credentials?.password) {
             throw new Error("Email and password are required"); 
           }
