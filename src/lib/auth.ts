@@ -1,5 +1,3 @@
-import GithubProvider from "next-auth/providers/github"
-import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectToDatabase } from "./db";
 import User from "@/models/user";

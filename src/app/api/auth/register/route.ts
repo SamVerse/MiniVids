@@ -1,6 +1,6 @@
 import { connectToDatabase } from "@/lib/db";
 import User from "@/models/user";
-import { loginSchema , registerSchema } from "@/schemas/auth.schema";
+import { registerSchema } from "@/schemas/auth.schema";
 import { NextRequest, NextResponse } from "next/server";
 
 
